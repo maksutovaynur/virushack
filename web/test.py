@@ -7,7 +7,7 @@ def randomword(length):
 
 w_complaints = st.text_input(
     label="Please describe your symptops here:",
-    value="I have a headache", key="symptoms", type="default")
+    value="I have a headache, fewer and influenza", key="symptoms", type="default")
 
 
 @st.cache
