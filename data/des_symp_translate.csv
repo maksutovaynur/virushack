@@ -1,0 +1,174 @@
+Type	Eng	Rus
+symptom	itching	зуд
+symptom	skin rash	кожная сыпь
+symptom	nodal skin eruptions	узловые высыпания на коже
+symptom	continuous sneezing	постоянное чихание
+symptom	shivering	Дрожание
+symptom	chills	озноб
+symptom	joint pain	боль в суставах
+symptom	stomach pain	боль в животе
+symptom	acidity	кислотность
+symptom	ulcers on tongue	язвы на языке
+symptom	muscle wasting	атрофия мышц
+symptom	vomiting	рвота
+symptom	burning micturition	жжение при мочеиспускании
+symptom	spotting  urination	пятнистое мочеиспускание
+symptom	fatigue	усталость
+symptom	weight gain	увеличение веса
+symptom	anxiety	тревожность
+symptom	cold hands and feets	холодные руки и ноги
+symptom	mood swings	перепады настроения
+symptom	weight loss	потеря веса
+symptom	restlessness	неугомонность
+symptom	lethargy	вялость
+symptom	patches in throat	пятна в горле
+symptom	irregular sugar level	нерегулярный уровень сахара
+symptom	cough	кашель
+symptom	high fever	высокая температура
+symptom	sunken eyes	запавшие глаза
+symptom	breathlessness	диспноэ
+symptom	sweating	потливость
+symptom	dehydration	обезвоживание
+symptom	indigestion	расстройство желудка
+symptom	headache	Головная боль
+symptom	yellowish skin	желтоватая кожа
+symptom	dark urine	темная моча
+symptom	nausea	тошнота
+symptom	loss of appetite	потеря аппетита
+symptom	pain behind the eyes	боль за глазами
+symptom	back pain	боль в спине
+symptom	constipation	запор
+symptom	abdominal pain	боль в животе
+symptom	diarrhoea	понос
+symptom	mild fever	слабая лихорадка
+symptom	yellow urine	желтая моча
+symptom	yellowing of eyes	пожелтение глаз
+symptom	acute liver failure	острая печеночная недостаточность
+symptom	fluid overload	перегрузка жидкостью
+symptom	swelling of stomach	отек желудка
+symptom	swelled lymph nodes	опухшие лимфатические узлы
+symptom	malaise	недомогание
+symptom	blurred and distorted vision	затуманенное и искаженное зрение
+symptom	phlegm	мокрота
+symptom	throat irritation	раздражение горла
+symptom	redness of eyes	покраснение глаз
+symptom	sinus pressure	давление пазухи
+symptom	runny nose	насморк
+symptom	congestion	перегруженность
+symptom	chest pain	боль в груди
+symptom	weakness in limbs	слабость в конечностях
+symptom	fast heart rate	быстрый сердечный ритм
+symptom	pain during bowel movements	боль при дефекации
+symptom	pain in anal region	боль в анальной области
+symptom	bloody stool	кровавый стул
+symptom	irritation in anus	раздражение в анусе
+symptom	neck pain	боль в шее
+symptom	dizziness	головокружение
+symptom	cramps	колики
+symptom	bruising	кровоподтеки
+symptom	obesity	ожирение
+symptom	swollen legs	опухшие ноги
+symptom	swollen blood vessels	опухшие кровеносные сосуды
+symptom	puffy face and eyes	опухшее лицо и глаза
+symptom	enlarged thyroid	увеличенная щитовидная железа
+symptom	brittle nails	ломкие ногти
+symptom	swollen extremeties	раздутые крайности
+symptom	excessive hunger	чрезмерный голод
+symptom	extra marital contacts	внебрачные контакты
+symptom	drying and tingling lips	сушка и покалывание губ
+symptom	slurred speech	невнятная речь
+symptom	knee pain	боль в колене
+symptom	hip joint pain	боль в тазобедренном суставе
+symptom	muscle weakness	мышечная слабость
+symptom	stiff neck	скованность мышц шеи
+symptom	swelling joints	отек суставов
+symptom	movement stiffness	жесткость движения
+symptom	spinning movements	вращающиеся движения
+symptom	loss of balance	потеря баланса
+symptom	unsteadiness	неустойчивость
+symptom	weakness of one body side	слабость одной стороны тела
+symptom	loss of smell	потеря обоняния
+symptom	bladder discomfort	дискомфорт мочевого пузыря
+symptom	foul smell of urine	неприятный запах мочи
+symptom	continuous feel of urine	постоянное ощущение мочи
+symptom	passage of gases	прохождение газов
+symptom	internal itching	внутренний зуд
+symptom	toxic look (typhos)	токсичный вид (тиф)
+symptom	depression	депрессия
+symptom	irritability	раздражительность
+symptom	muscle pain	мышечные боли
+symptom	altered sensorium	измененный сенсорий
+symptom	red spots over body	красные пятна на теле
+symptom	belly pain	боль в животе
+symptom	abnormal menstruation	ненормальная менструация
+symptom	dischromic  patches	дисхромные пятна
+symptom	watering from eyes	поливать из глаз
+symptom	increased appetite	повышенный аппетит
+symptom	polyuria	полиурия
+symptom	family history	история семьи
+symptom	mucoid sputum	слизистая мокрота
+symptom	rusty sputum	ржавая мокрота
+symptom	lack of concentration	нехватка концентрации
+symptom	visual disturbances	визуальные нарушения
+symptom	receiving blood transfusion	получение переливания крови
+symptom	receiving unsterile injections	получать нестерильные инъекции
+symptom	coma	кома
+symptom	stomach bleeding	желудочное кровотечение
+symptom	distention of abdomen	вздутие живота
+symptom	history of alcohol consumption	история употребления алкоголя
+symptom	fluid overload	перегрузка жидкостью
+symptom	blood in sputum	кровь в мокроте
+symptom	prominent veins on calf	видные вены на икре
+symptom	palpitations	учащенное сердцебиение
+symptom	painful walking	болезненная ходьба
+symptom	pus filled pimples	гнойные прыщи
+symptom	blackheads	комедоны
+symptom	scurring	суетливость
+symptom	skin peeling	пилинг кожи
+symptom	silver like dusting	серебристый как пыление
+symptom	small dents in nails	маленькие вмятины в ногтях
+symptom	inflammatory nails	воспалительные ногти
+symptom	blister	волдырь
+symptom	red sore around nose	красная рана вокруг носа
+symptom	yellow crust ooze	желтая корка сочится
+disease	fungal infection	грибковая инфекция
+disease	allergy	аллергия
+disease	gerd	Герд
+disease	chronic cholestasis	хронический холестаз
+disease	drug reaction	лекарственная реакция
+disease	peptic ulcer diseae	язвенная болезнь
+disease	aids	СПИД
+disease	diabetes	диабет
+disease	gastroenteritis	гастроэнтерит
+disease	bronchial asthma	бронхиальная астма
+disease	hypertension	гипертония
+disease	migraine	мигрень
+disease	cervical spondylosis	шейный спондилез
+disease	paralysis (brain hemorrhage)	паралич (кровоизлияние в мозг)
+disease	jaundice	желтуха
+disease	malaria	малярия
+disease	chicken pox	ветряная оспа
+disease	dengue	лихорадка денге
+disease	typhoid	брюшной тиф
+disease	hepatitis a	гепатит А
+disease	hepatitis b	гепатит Б
+disease	hepatitis c	гепатит С
+disease	hepatitis d	гепатит д
+disease	hepatitis e	гепатит е
+disease	alcoholic hepatitis	алкогольный гепатит
+disease	tuberculosis	туберкулез
+disease	common cold	простуда
+disease	pneumonia	пневмония
+disease	dimorphic hemmorhoids(piles)	диморфный геморрой (сваи)
+disease	heart attack	острое сердечно-сосудистое заболевание
+disease	varicose veins	варикозное расширение вен
+disease	hypothyroidism	гипотиреоз
+disease	hyperthyroidism	гипертиреоз
+disease	hypoglycemia	гипогликемия
+disease	osteoarthristis	остеоартрит
+disease	arthritis	артрит
+disease	(vertigo) paroymsal  positional vertigo	(головокружение) пароймсал позиционное головокружение
+disease	acne	прыщи
+disease	urinary tract infection	инфекция мочевыводящих путей
+disease	psoriasis	псориаз
+disease	impetigo	импетиго
