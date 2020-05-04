@@ -82,7 +82,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #183026;
+		background-color: #73A4CB;
 		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
@@ -1854,7 +1854,7 @@ input, select, textarea {
 				top: 0;
 				width: 50%;
 				height: 100%;
-				background: #152E33;
+				background: #fff;
 				overflow: hidden;
 			}
 
