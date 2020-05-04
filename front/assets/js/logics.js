@@ -39,7 +39,6 @@ async function VIVA_find_function(event){
         "medicine",
         "Рекомендуем вам лекарства *",
         "* информация только для ознакомления и не является рекомендацией врача"
-    )
-
-
+    );
+    window.location.href = '#diagnosis';
 }
