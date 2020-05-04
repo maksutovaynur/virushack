@@ -3,7 +3,7 @@ function create_ul(items, prefix_link=0) {
     else if (1 === prefix_link){f = (x => `<a href=${x[1]}">${x[0]}</a>`)}
     else {
         f = function (x) {
-          return `${x[0]} <button href="${x[1]}" onclick="redirect_to('${x[1]}')">Записаться на приём от ${x[2]}р.`
+          return `${x[0]} <button href="${x[1]}" onclick="redirect_to('${x[1]}')" align="left">Записаться на приём от ${x[2]}р.`
               + `</button><button type="button" align="left" onclick="react_on_doctor_button('${x[3]}', '${x[0]}')">Обратиться в чате</button>`
         }
         }
