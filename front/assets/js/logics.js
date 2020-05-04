@@ -1,3 +1,3 @@
-(function () {
+function VIVA_find_function(event){
 
-})();
+}
