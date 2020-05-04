@@ -15,7 +15,7 @@ def get_doctor_by_disease(disease_name):
 
 
 def get_treatments_by_disease(disease_name):
-    return []
+    return [[]]
 
 
 def _get_doctor_by_disease(disease_name):
