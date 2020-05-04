@@ -65,7 +65,8 @@ async function VIVA_find_function(event){
 }
 
 function react_on_doctor_button(name, spec){
-    document.getElementById(spec).hidden = false;
+    el = document.getElementById(spec);
+    el.hidden = ! el.hidden;
     // alert(`<header>${name}</header><p>${spec}</p> <a>Здравствуйте! Чем я могу Вам помочь?</a>>`);
 }
 
