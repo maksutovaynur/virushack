@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/api/diseases")
 def root(text: str = Query(...), max_diseases: int = Query(3), max_doctors: int = Query(2), max_treatments: int = Query(2)):
-    return {
+    result = {
         "result": [
             {
                 'disease': d,
@@ -17,5 +17,6 @@ def root(text: str = Query(...), max_diseases: int = Query(3), max_doctors: int 
             for d in get_disease_names_by_text(text, max_len=max_diseases)
         ]
     }
+    return result
 
 app.mount("/", StaticFiles(directory="front"))

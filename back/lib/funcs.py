@@ -65,7 +65,7 @@ def real_get_treatment_by_disease(name, max_len=5, threshold=0.1):
     candPharm = candPharm.head(max_len)
     if candPharm.shape[0] == 0:
         return []
-    formatNames = list(candPharm.loc[:, 'Name'].apply(" / ".join))
+    formatNames = [(n, f"https://apteka.ru/search/?q={n}&order=products%2Cmaterials") for n in list(candPharm.loc[:, 'Name'].apply(" / ".join))]
     return formatNames
 
 
@@ -78,8 +78,8 @@ def real_get_doctors_by_disease(name, max_len=2, threshold=0.1):
     candProf = candProf[['Name', 'Targ', 'tmp', 'tmp_sum']].head(max_len)
     if candProf.shape[0] == 0:
         return []
-    print(candProf)
-    formatNames = list(candProf.apply(lambda x: f"{x['Targ']}", axis=1))
+    formatNames = list(candProf.apply(
+        lambda x: (x['Name'], "https://health.yandex.ru/consultation/create-profile", "700"), axis=1))
     return formatNames
 
 
