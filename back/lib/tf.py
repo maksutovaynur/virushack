@@ -1,9 +1,11 @@
-
 import gc
+import json
 import numpy as np
-import stats as S
+try: import back.lib.stats as S
+except: import stats as S
 from collections import defaultdict
 lemm = S.lemm_h
+
 
 def sum_dicts(dicts):
     r = defaultdict(int)
@@ -11,9 +13,11 @@ def sum_dicts(dicts):
         for k, v in d.items():
             r[k] += v
     return r
-            
+
+
 def div_dicts(a, b):
     return {k: v/b[k] for k, v in a.items()}
+
 
 def count_dicts(dicts):
     r = defaultdict(int)
@@ -22,16 +26,18 @@ def count_dicts(dicts):
             r[k] += 1
     return r
 
+
 def mul_dicts(a, b):
     return {k: v * b[k] for k, v in a.items()}
-    
+
 
 def tf_idf(df):
     doc_summs = df.loc[:, 'Kw'].agg(sum_dicts)
     doc_cnts = df.loc[:, 'Kw'].agg(count_dicts)
     idf = {k: np.log(df.shape[0] / v) for k, v in doc_cnts.items()}
     df.loc[:, 'Tf-Idf'] = df.loc[:, 'Kw'].apply(lambda x: div_dicts(x, doc_summs)).apply(lambda x: mul_dicts(x, idf))
-    
+
+
 def freq_dict(text, suff='ph'):
     txt_lemm = lemm(text)
     kwds = S.keywords(txt_lemm)
@@ -45,14 +51,12 @@ def freq_dict(text, suff='ph'):
     print(f"Stats: words count: {word_cnt}, log_inv = {word_cnt_log_inv}; min = {min(v)}, max = {max(v)}")
     return kwds_inverted
 
+
 def prepare_dataset(df, ds_basename, threshold=1e-2, max_len=None):
     Targ = 'Targ'
     Lemm = 'Lemm'
     Kw = 'Kw'
-    KwMult = 'KwMult'
     KwFilt = 'KwFilt'
-    FSum = 'Fsum'
-    KwNorm = 'KwNorm'
     df = df.loc[df.loc[:, Targ].notnull()]
     if max_len is not None:
         df = df.head(max_len)

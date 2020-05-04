@@ -17,6 +17,7 @@ function build_ul(items, parent_id, title, foot){
     dv.appendChild(hdr);
     dv.appendChild(ftr);
     dv.appendChild(ul);
+    diag.hidden = false;
 }
 
 
@@ -31,7 +32,7 @@ async function VIVA_find_function(event){
 
     build_ul(result.map(x => x['disease']), "diagnosis", "Вероятные диагнозы:");
     build_ul(
-        result.map(x => x['doctor']),
+        result.map(x => x['doctors']).flat(),
         "chatroom",
         "Вам стоит отбратиться к следующим специалистам:");
     build_ul(
