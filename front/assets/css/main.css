@@ -2345,9 +2345,9 @@ input, select, textarea {
 		/* Basic */
 
 			body {
-				background-color: #203936;
+				background-color: #73A4CB;
 				background-image: url("images/overlay.png"), url("../../images/bg-alt.jpg");
-				background-repeat: repeat, repeat;
+				background-repeat: repeat,no-repeat;
 				background-size: auto, 100% auto;
 				background-position: top left, top center;
 				background-attachment: scroll, scroll;
