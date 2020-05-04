@@ -38,7 +38,7 @@ _data_folder = os.path.join(_lib_folder, os.pardir, 'data')
 converters = {'Tf-Idf': eval, 'KwFilt': eval}
 Ph2, Sd2, Pd = map(
     lambda x: pd.read_csv(os.path.join(_data_folder, x), converters=converters),
-    ["pharma2-kw-thr0.010000.csv", "def2-kw-thr0.010000.csv", "prof-kw-thr0.010000.csv"])
+    ["pharma2-kw-thr0.010000.csv", "def2-kw-thr0.010000.csv", "prof-kw-thr0.010000_1.csv"])
 
 
 def real_get_disease_by_symptoms(text, max_des=5, threshold = 0.1):
@@ -75,11 +75,11 @@ def real_get_doctors_by_disease(name, max_len=2, threshold=0.1):
     Pd['tmp_sum'] = Pd['tmp'].apply(S.sum_stat)
     sPd = Pd.sort_values('tmp_sum', ascending=False)
     candProf = sPd.loc[sPd.loc[:, 'tmp_sum'] > threshold * sPd.loc[0, 'tmp_sum']]
-    candProf = candProf[['Name', 'Targ', 'tmp', 'tmp_sum']].head(max_len)
+    candProf = candProf[['Name', 'Targ', 'tmp', 'tmp_sum', 'YandexLink', 'MinPrice', 'RandName']].head(max_len)
     if candProf.shape[0] == 0:
         return []
     formatNames = list(candProf.apply(
-        lambda x: (x['Name'], "https://health.yandex.ru/consultation/create-profile", "700"), axis=1))
+        lambda x: (x['Name'], x['YandexLink'], x["MinPrice"], x["RandName"]), axis=1))
     return formatNames
 
 

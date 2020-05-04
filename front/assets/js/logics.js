@@ -4,7 +4,7 @@ function create_ul(items, prefix_link=0) {
     else {
         f = function (x) {
           return `${x[0]} <button href="${x[1]}" onclick="redirect_to('${x[1]}')">Записаться на приём от ${x[2]}р.`
-              + '</button><button type="button" onclick="react_on_doctor_button(event)">Обратиться в чате</button>'
+              + `</button><button type="button" onclick="react_on_doctor_button('${x[3]}', '${x[0]}')">Обратиться в чате</button>`
         }
         }
     let ul = document.createElement('ul');
