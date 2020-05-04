@@ -3,8 +3,12 @@ function create_ul(items, prefix_link=0) {
     else if (1 === prefix_link){f = (x => `<a href=${x[1]}">${x[0]}</a>`)}
     else {
         f = function (x) {
-          return `${x[0]} <button href="${x[1]}" onclick="redirect_to('${x[1]}')" align="left">Записаться на приём от ${x[2]}р.`
-              + `</button><button type="button" align="left" onclick="react_on_doctor_button('${x[3]}', '${x[0]}')">Обратиться в чате</button>`
+          return ""
+            + `${x[0]} <button href="${x[1]}" onclick="redirect_to('${x[1]}')" align="left">`
+            + `Записаться на приём от ${x[2]}р.</button>`
+            + `<button type="button" align="left" onclick="react_on_doctor_button('${x[3]}', '${x[0]}')">`
+            +`Обратиться в чате</button> <div id='${x[0]}' hidden>`
+            + `<header>${x[3]}</header><p>${x[0]}</p> <a>Здравствуйте! Чем я могу Вам помочь?</a></div>`
         }
         }
     let ul = document.createElement('ul');
@@ -61,7 +65,8 @@ async function VIVA_find_function(event){
 }
 
 function react_on_doctor_button(name, spec){
-    alert(`<header>${name}</header><p>${spec}</p> <a>Здравствуйте! Чем я могу Вам помочь?</a>>`);
+    document.getElementById(spec).hidden = false;
+    // alert(`<header>${name}</header><p>${spec}</p> <a>Здравствуйте! Чем я могу Вам помочь?</a>>`);
 }
 
 function redirect_to(href){
