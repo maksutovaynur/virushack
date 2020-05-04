@@ -77,7 +77,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #183026;
+		background-color: #73A4CB;
 		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
