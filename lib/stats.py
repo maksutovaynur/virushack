@@ -1,16 +1,34 @@
+import re
 import math
 import collections
 from nltk.corpus import stopwords
 from pymystem3 import Mystem
+from nltk.stem.snowball import SnowballStemmer
+
 stemmer = Mystem()
+stemmer_nltk = SnowballStemmer("russian")
+
+remove_pattern = re.compile('\W')
+
+
+def normalize_text(text):
+    return remove_pattern.sub(' ', text).lower().strip()
+
+
+def filter_empty(lst):
+    return [i for i in map(lambda x: x.strip(), lst) if len(i) > 0]
 
 
 def lemm(text):
-    return list(filter(lambda x: x, map(lambda x: x.strip(), stemmer.lemmatize(text.lower()))))
+    return filter_empty(stemmer.lemmatize(normalize_text(text)))
 
 
 def lemm_m(text):
-    return list(filter(lambda x: x, map(lambda x: x.strip(), stemmer.lemmatize(text.lower()))))
+    return filter_empty(stemmer_nltk.stem(x.strip()) for x in normalize_text(text).split())
+
+
+def lemm_h(text):
+    return list(map(stemmer_nltk.stem, filter_empty(stemmer.lemmatize(normalize_text(text)))))
 
 
 def norm_stat(kw):
