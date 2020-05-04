@@ -60,8 +60,8 @@ async function VIVA_find_function(event){
     window.location.href = '#diagnosis';
 }
 
-function react_on_doctor_button(event){
-
+function react_on_doctor_button(name, spec){
+    alert(`<header>${name}</header><p>${spec}</p> <a>Здравствуйте! Чем я могу Вам помочь?</a>>`);
 }
 
 function redirect_to(href){
