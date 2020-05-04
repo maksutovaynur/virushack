@@ -60,7 +60,7 @@
 					<h2> Ваши жалобы </h2>
 					<p> Напишите в любой удобной Вам форме, что Вас беспокоит </p>
 				</header>
-				<form onsubmit="return VIVA_find_function(event)">
+				<form>
 					<div class="row gtr-50">
 						<!-- <div class="col-6 col-12-mobile"><input type="text" class="text" name="name" placeholder="Name" /></div> -->
 						<!-- <div class="col-6 col-12-mobile"><input type="text" class="text" name="email" placeholder="Email" /></div> -->
@@ -69,7 +69,9 @@
 						</div>
 						<div class="col-12">
 							<ul class="actions">
-								<li><input type="button" value="отправить" id="find"/></li>
+								<li>
+									<input type="button" value="отправить" onclick="return VIVA_find_function(event)"/>
+								</li>
 							</ul>
 						</div>
 					</div>
