@@ -84,7 +84,7 @@ def real_get_doctors_by_disease(name, max_len=2, threshold=0.1):
     candProf = sPd.loc[sPd.loc[:, 'tmp_sum'] > threshold * sPd.loc[0, 'tmp_sum']]
     candProf = candProf[['Name', 'Targ', 'tmp', 'tmp_sum', 'YandexLink', 'MinPrice', 'RandName']].head(max_len)
     if candProf.shape[0] == 0:
-        candProf = candProf.loc[candProf['Name'] == 'Терапевт']
+        candProf = Pd.loc[Pd['Name'] == 'Терапевт']
         # return []
     formatNames = list(candProf.apply(
         lambda x: (x['Name'], x['YandexLink'], x["MinPrice"], x["RandName"]), axis=1))

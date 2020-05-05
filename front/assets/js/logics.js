@@ -20,12 +20,12 @@ function create_ul(items, prefix_link=0) {
     return ul;
 }
 
-function build_block(parent_id, title, items, foot){
+function build_block(parent_id, title, items, foot, prefix_link=0){
     diag = document.getElementById(parent_id);
     // diag.innerHtml = '';
     diag.innerHTML = `<div><header><h1>${title}</h1><p>${foot || ""}</p></header></div>`.trim();
     ul = document.createElement('ul');
-    diag.firstChild.appendChild(create_ul(items));
+    diag.firstChild.appendChild(create_ul(items, prefix_link));
     diag.hidden = false;
 }
 
@@ -36,6 +36,16 @@ function hide(items, is_hidden){
 }
 
 hide(["medicine", "chatroom", "diagnosis"], true);
+
+function uniq_arr(arr, field){
+    dct = Object();
+    arr.forEach(
+        function (item) {
+            dct[item[field]] = item
+        }
+    );
+    return Object.values(dct)
+}
 
 async function VIVA_find_function(event){
     text = document.getElementById('complaint-text').value;
@@ -53,7 +63,9 @@ async function VIVA_find_function(event){
     build_block(
         "chatroom",
         "Вам стоит отбратиться к следующим специалистам:",
-        result.map(x => create_ul(x['doctors'], 2).innerHTML),
+        uniq_arr(result.map(x => x['doctors']).flat(1)),
+        "",
+        2
     );
     build_block(
         "medicine",
