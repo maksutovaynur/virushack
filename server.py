@@ -11,12 +11,13 @@ def root(text: str = Query(...), max_diseases: int = Query(3), max_doctors: int 
         "result": [
             {
                 'disease': str(d),
-                'doctors': map(lambda x: map(str, x), get_doctors_by_disease(d, max_doctors)),
-                'treatments': map(lambda x: map(str, x), get_treatments_by_disease(d, max_treatments))
+                'doctors': get_doctors_by_disease(d, max_doctors),
+                'treatments': get_treatments_by_disease(d, max_treatments)
             }
             for d in get_disease_names_by_text(text, max_len=max_diseases)
         ]
     }
+    print("Result:", result)
     return result
 
 app.mount("/", StaticFiles(directory="front"))
