@@ -69,10 +69,10 @@ def real_get_treatment_by_disease(name, max_len=5, threshold=0.1):
     sPh2 = sPh2.groupby('Subst').agg({'Name': list, 'Targ': 'first', 'tmp': 'first', 'tmp_sum': 'first'}).reset_index()
     sPh2 = sPh2.sort_values('tmp_sum', ascending=False)
     candPharm = sPh2.loc[sPh2.loc[:, 'tmp_sum'] > threshold * sPh2.loc[0, 'tmp_sum']]
-    candPharm = candPharm.head(max_len)
-    if candPharm.shape[0] == 0:
+    candPharm = candPharm.loc[:, "Name"].dropna().head(max_len)
+    if len(candPharm) == 0:
         return []
-    formatNames = [(n, f"https://apteka.ru/search/?q={n.split(' / ', 1)[0]}&order=products%2Cmaterials") for n in list(candPharm.loc[:, 'Name'].apply(" / ".join))]
+    formatNames = [(n, f"https://apteka.ru/search/?q={n.split(' / ', 1)[0]}&order=products%2Cmaterials") for n in list(candPharm.apply(" / ".join))]
     return formatNames
 
 
@@ -84,12 +84,12 @@ def real_get_doctors_by_disease(name, max_len=2, threshold=0.001):
     Pd['tmp_sum'] = Pd['tmp'].apply(S.sum_stat)
     sPd = Pd.sort_values('tmp_sum', ascending=False)
     candProf = sPd.loc[sPd.loc[:, 'tmp_sum'] > threshold * sPd.loc[0, 'tmp_sum']]
-    candProf = candProf[['Name', 'Targ', 'tmp', 'tmp_sum', 'YandexLink', 'MinPrice', 'RandName']].head(max_len)
+    candProf = candProf[['Name', 'YandexLink', 'MinPrice', 'RandName']].dropna.head(max_len)
     if candProf.shape[0] == 0:
         candProf = Pd.loc[Pd['Name'] == 'Терапевт']
         # return []
     formatNames = list(candProf.apply(
-        lambda x: (x['Name'], x['YandexLink'] or "", x["MinPrice"] or "", x["RandName"]) or "", axis=1))
+        lambda x: (x['Name'], x['YandexLink'], x["MinPrice"], x["RandName"]), axis=1))
     return formatNames
 
 
