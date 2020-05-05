@@ -72,12 +72,14 @@ def real_get_treatment_by_disease(name, max_len=5, threshold=0.1):
     candPharm = candPharm.head(max_len)
     if candPharm.shape[0] == 0:
         return []
-    formatNames = [(n, f"https://apteka.ru/search/?q={n}&order=products%2Cmaterials") for n in list(candPharm.loc[:, 'Name'].apply(" / ".join))]
+    formatNames = [(n, f"https://apteka.ru/search/?q={n.split(' / ', 1)[0]}&order=products%2Cmaterials") for n in list(candPharm.loc[:, 'Name'].apply(" / ".join))]
     return formatNames
 
 
-def real_get_doctors_by_disease(name, max_len=2, threshold=0.1):
+def real_get_doctors_by_disease(name, max_len=2, threshold=0.001):
     kw = S.keywords(T.lemm(name))
+    add_cache = __cache__.get(name, {})
+    kw.update(add_cache)
     Pd['tmp'] = Pd['Tf-Idf'].apply(lambda x: S.multiply2stats(kw, x, max_dist=0))
     Pd['tmp_sum'] = Pd['tmp'].apply(S.sum_stat)
     sPd = Pd.sort_values('tmp_sum', ascending=False)
