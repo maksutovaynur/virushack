@@ -70,8 +70,9 @@ async function VIVA_find_function(event){
     build_block(
         "medicine",
         "Рекомендуем вам лекарства *",
-        result.map(x => create_ul(x['treatments'], 1).innerHTML), //<strong>${x['disease']}</strong>
-        "* информация только для ознакомления и не является рекомендацией врача"
+        result.map(x => x['treatments']).flat(1),
+        "* информация только для ознакомления и не является рекомендацией врача",
+        1,
     );
     window.location.href = '#diagnosis';
 }
