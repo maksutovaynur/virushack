@@ -8,7 +8,7 @@ function create_ul(items, prefix_link=0) {
             + `Записаться на приём от ${x[2]}р.</button>`
             + `<button type="button" align="left" onclick="react_on_doctor_button('${x[3]}', '${x[0]}')">`
             +`Обратиться в чате</button> <div id='${x[0]}' hidden>`
-            + `<header>${x[3]}</header><p>${x[0]}</p> <a>Здравствуйте! Чем я могу Вам помочь?</a></div></div>`
+            + `<p>${x[3]}</p> <a>Здравствуйте! Чем я могу Вам помочь?</a></div></div>`
         }
         }
     let ul = document.createElement('ul');
