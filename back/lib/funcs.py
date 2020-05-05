@@ -44,7 +44,7 @@ Ph2, Sd2, Pd = map(
 __cache__ = dict()
 
 
-def real_get_disease_by_symptoms(text, max_des=5, threshold = 0.1):
+def real_get_disease_by_symptoms(text, max_des=5, threshold = 0.5):
     input_text = S.keywords(S.lemm_h(text))
     Sd2['tmp'] = Sd2['Tf-Idf'].apply(lambda x: S.multiply2stats(input_text, x, max_dist=0))
     Sd2['tmp_sum'] = Sd2['tmp'].apply(S.sum_stat)

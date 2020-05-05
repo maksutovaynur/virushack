@@ -63,7 +63,7 @@ async function VIVA_find_function(event){
     build_block(
         "chatroom",
         "Вам стоит отбратиться к следующим специалистам:",
-        uniq_arr(result.map(x => x['doctors']).flat(1)),
+        uniq_arr(result.map(x => x['doctors']).flat(1), 0),
         "",
         2
     );

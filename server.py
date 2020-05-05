@@ -6,7 +6,7 @@ app = FastAPI()
 
 
 @app.get("/api/diseases")
-def root(text: str = Query(...), max_diseases: int = Query(3), max_doctors: int = Query(2), max_treatments: int = Query(2)):
+def root(text: str = Query(...), max_diseases: int = Query(4), max_doctors: int = Query(2), max_treatments: int = Query(2)):
     result = {
         "result": [
             {
