@@ -1,6 +1,8 @@
 import re
 import math
 import collections
+import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from pymystem3 import Mystem
 from nltk.stem.snowball import SnowballStemmer
