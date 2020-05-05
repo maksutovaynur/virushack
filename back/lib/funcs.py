@@ -41,6 +41,9 @@ Ph2, Sd2, Pd = map(
     ["pharma2-kw-thr0.010000.csv", "def2-kw-thr0.010000.csv", "prof-kw-thr0.010000_1.csv"])
 
 
+__cache__ = dict()
+
+
 def real_get_disease_by_symptoms(text, max_des=5, threshold = 0.1):
     input_text = S.keywords(S.lemm_h(text))
     Sd2['tmp'] = Sd2['Tf-Idf'].apply(lambda x: S.multiply2stats(input_text, x, max_dist=0))
@@ -50,12 +53,16 @@ def real_get_disease_by_symptoms(text, max_des=5, threshold = 0.1):
     candDeseases = candDeseases.head(max_des)
     if candDeseases.shape[0] == 0:
         return []
-    Names = candDeseases.loc[:, 'Name']
-    return list(Names)
+    Names = list(candDeseases.loc[:, 'Name'])
+    for n in Names:
+        __cache__[n] = input_text
+    return Names
 
 
 def real_get_treatment_by_disease(name, max_len=5, threshold=0.1):
     kw = S.keywords(T.lemm(name))
+    add_cache = __cache__.get(name, {})
+    kw.update(add_cache)
     Ph2['tmp'] = Ph2['Tf-Idf'].apply(lambda x: S.multiply2stats(kw, x, max_dist=0))
     Ph2['tmp_sum'] = Ph2['tmp'].apply(S.sum_stat)
     sPh2 = Ph2.sort_values('Subst')
@@ -77,7 +84,8 @@ def real_get_doctors_by_disease(name, max_len=2, threshold=0.1):
     candProf = sPd.loc[sPd.loc[:, 'tmp_sum'] > threshold * sPd.loc[0, 'tmp_sum']]
     candProf = candProf[['Name', 'Targ', 'tmp', 'tmp_sum', 'YandexLink', 'MinPrice', 'RandName']].head(max_len)
     if candProf.shape[0] == 0:
-        return []
+        candProf = candProf.loc[candProf['Name'] == 'Терапевт']
+        # return []
     formatNames = list(candProf.apply(
         lambda x: (x['Name'], x['YandexLink'], x["MinPrice"], x["RandName"]), axis=1))
     return formatNames
