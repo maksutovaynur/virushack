@@ -89,7 +89,7 @@ def real_get_doctors_by_disease(name, max_len=2, threshold=0.001):
         candProf = Pd.loc[Pd['Name'] == 'Терапевт']
         # return []
     formatNames = list(candProf.apply(
-        lambda x: (x['Name'], x['YandexLink'], x["MinPrice"], x["RandName"]), axis=1))
+        lambda x: (x['Name'], x['YandexLink'] or "", x["MinPrice"] or "", x["RandName"]) or "", axis=1))
     return formatNames
 
 
